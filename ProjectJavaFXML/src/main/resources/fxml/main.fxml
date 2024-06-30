@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane minHeight="720.0" minWidth="960.0" onKeyPressed="#onKeyPressedAction" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mic.projectjavafxml.sample.Controller">
+
+   <center>
+      <StackPane> 
+      <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="codeTab" text="Menu">
+            <content>
+            <ScrollPane fx:id="scroll" fitToWidth="true" fitToHeight="true">
+              <AnchorPane minHeight="1440.0" minWidth="1280.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="860.0" prefWidth="1280.0" spacing="10.0">
+                           <children>
+                              <VBox prefHeight="850.0" prefWidth="725.0" spacing="5.0">
+                                 <VBox fx:id="info">
+                                    <Label styleClass="transparent-label" text=" About Us! ;)">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="10" left="0" right="0" top="20" />
+                                       </padding>
+                                    </Label>
+                                    <TextArea fx:id="txt" minHeight="150" wrapText="true" editable="false" text="An application with a graphical interface made in JavaFX aimed at simulating the operation of a MIC-1 processor, an architecture described by Andrew S. Tanenbaum in his book 'Structured Computer Organization'. Developed only for educational purposes by Computer Science graduates at Universidade Federal Fluminense (Brazil, Rio de Janeiro)."/>
+                                 </VBox>
+                                 <Label fx:id="supportedInstructionsLab" styleClass="transparent-label" text=" Instructions">
+                                    <font>
+                                       <Font name="System Bold" size="16.0" />
+                                    </font>
+                                 </Label>
+                                 <TableView fx:id="supportedInstructionsTable" fixedCellSize="24.0" minHeight="315.0" styleClass="center-align">
+                                    <columns>
+                                       <TableColumn fx:id="instrMnemonic" editable="false" prefWidth="90.0" resizable="false" styleClass="center-align" text="%mnemonic" />
+                                       <TableColumn fx:id="instrInstruction" editable="false" prefWidth="195.0" resizable="false" styleClass="center-align" text="%instruction" />
+                                       <TableColumn fx:id="instrMeaning" editable="false" prefWidth="242.0" resizable="false" styleClass="center-align" text="%meaning" />
+                                       <TableColumn fx:id="instrBinaryCode" editable="false" prefWidth="196.0" resizable="false" styleClass="center-align" text="%binaryCode" />
+                                    </columns>
+                                 </TableView>
+                                 <VBox prefHeight="600.0" prefWidth="891.0" spacing="5.0">
+                                    <children>
+                                       <Label fx:id="controlMemoryLabel" text="%controlMemory">
+                                          <font>
+                                             <Font name="System Bold" size="18.0" />
+                                          </font>
+                                       </Label>
+                                          <TableView fx:id="controlMemoryTable" fixedCellSize="24.0" prefHeight="315.0" prefWidth="705.0" styleClass="center-align">
+                                             <columns>
+                                                   <TableColumn fx:id="cmAddressCol" text="%address" />
+                                                   <TableColumn fx:id="cmValueCol" prefWidth="-1.0" text="%value">
+                                                <columns>
+                                                   <TableColumn fx:id="cmAmuxCol" prefWidth="52.0" styleClass="center-align" text="AMUX" />
+                                                   <TableColumn fx:id="cmCondCol" prefWidth="58.0" styleClass="center-align" text="COND" />
+                                                   <TableColumn fx:id="cmAluCol" prefWidth="58.0" styleClass="center-align" text="ALU" />
+                                                   <TableColumn fx:id="cmShCol" prefWidth="58.0" styleClass="center-align" text="SH" />
+                                                   <TableColumn fx:id="cmMbrCol" prefWidth="52.0" styleClass="center-align" text="MBR" />
+                                                   <TableColumn fx:id="cmMarCol" prefWidth="52.0" styleClass="center-align" text="MAR" />
+                                                   <TableColumn fx:id="cmRdCol" prefWidth="52.0" styleClass="center-align" text="RD" />
+                                                   <TableColumn fx:id="cmWrCol" prefWidth="52.0" styleClass="center-align" text="WR" />
+                                                   <TableColumn fx:id="cmEncCol" prefWidth="52.0" styleClass="center-align" text="ENC" />
+                                                   <TableColumn fx:id="cmCCol" prefWidth="74.0" styleClass="center-align" text="C" />
+                                                   <TableColumn fx:id="cmBCol" prefWidth="74.0" styleClass="center-align" text="B" />
+                                                   <TableColumn fx:id="cmACol" prefWidth="74.0" styleClass="center-align" text="A" />
+                                                   <TableColumn fx:id="cmAddrCol" prefWidth="93.0" styleClass="center-align" text="ADDR" />
+                                                </columns></TableColumn>
+                                             </columns>
+                                          </TableView>
+                                    </children>
+                                 </VBox>
+                              </VBox>
+                              <VBox prefHeight="850.0" prefWidth="522.5" spacing="5.0">
+                                 <VBox prefHeight="300.0" >
+                                    <Label fx:id="terminalLabel" styleClass="transparent-label" text=" ">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="36" left="2.5" right="2.5" top="2.5" />
+                                       </padding>
+                                    </Label>
+                                    <TextArea fx:id="codeArea" minHeight="450" />
+                                 </VBox>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </ScrollPane>
+            </content>
+          </Tab>
+          <Tab fx:id="circuitModelTab" text="View">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox minWidth="845.0" prefHeight="857.0" prefWidth="1280.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="838.0" prefWidth="1280.0" spacing="5.0">
+                                 <children>
+                                    <VBox fx:id="VBoxDropdown" minWidth="317.0" prefHeight="827.0" prefWidth="357.0" spacing="10.0">  
+                                       <padding>
+                                          <Insets bottom="0" left="0.0" right="0.0" top="5.0" />
+                                       </padding>
+                                       <children>            
+                                          <HBox spacing="5.0" alignment="TOP_CENTER">
+                                             <children>
+                                                <Button fx:id="zoomInButton" text="Zoom In" onAction="#zoomIn">
+                                                   <graphic>
+                                                      <ImageView fitWidth="20" fitHeight="20.0" preserveRatio="true">
+                                                            <image>
+                                                               <Image url="@../img/magnify-plus.png" />
+                                                            </image>
+                                                      </ImageView>
+                                                   </graphic>  
+                                                </Button>
+                                                <Button fx:id="zoomOutButton" text="Zoom Out" onAction="#zoomOut">
+                                                   <graphic>
+                                                      <ImageView fitWidth="20" fitHeight="20.0" preserveRatio="true">
+                                                            <image>
+                                                               <Image url="@../img/magnify-minus.png" />
+                                                            </image>
+                                                      </ImageView>
+                                                   </graphic>  
+                                                </Button>
+                                                <Button fx:id="toggleCircuitButton" text="Toggle View" onAction="#toggleCircuit">
+                                                   <graphic>
+                                                      <ImageView fitWidth="20" fitHeight="20.0" preserveRatio="true">
+                                                            <image>
+                                                               <Image url="@../img/chip.png" />
+                                                            </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                             <children>
+                                                <VBox styleClass="default-border">
+                                                   <children>
+                                                      <Label fx:id="clockTitleLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="318.0" styleClass="table-label" text="%clock" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="clockLab" alignment="CENTER" contentDisplay="CENTER" prefHeight="78.0" prefWidth="156.0" styleClass="status-bar" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="10.0" styleClass="default-border">
+                                                   <children>
+                                                      <Label fx:id="subClockTitleLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="318.0" styleClass="table-label" text="%subClock" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="subcycleLab" alignment="CENTER" contentDisplay="CENTER" prefHeight="78.0" prefWidth="156.0" styleClass="status-bar" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox fx:id="comboVBox" alignment="TOP_CENTER" spacing="5.0">
+                                             <ComboBox fx:id="comboBox" prefWidth="200"/>
+                                             <MenuButton fx:id="radixChoiceMenu" mnemonicParsing="false" prefWidth="75.0" text="%decimal">
+                                             <items>
+                                                <MenuItem fx:id="decimalRadixItem" mnemonicParsing="false" onAction="#setDecimalRadix" text="%decimal" />
+                                                <MenuItem fx:id="binaryRadixItem" mnemonicParsing="false" onAction="#setBinaryRadix" text="%binary" />
+                                             </items>
+                                             </MenuButton>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <StackPane>
+                                       <ScrollPane hbarPolicy="NEVER" vbarPolicy="NEVER">
+                                          <AnchorPane fx:id="circuitPane" maxWidth="2560" maxHeight="1440.0" prefHeight="720.0">
+                                             <children>
+                                                <ImageView fx:id="backgroundImg" fitWidth="1280" fitHeight="720.0" layoutX="0" layoutY="0" pickOnBounds="true" preserveRatio="true">
+                                                   <Image url="@../img/datapath/reduced-background.png" />
+                                                </ImageView>
+                                                <ImageView fx:id="circuitBottom" fitWidth="1280" fitHeight="720" layoutX="150" layoutY="0" pickOnBounds="true" preserveRatio="true">
+                                                   <Image url="@../img/datapath/circuit-bottom.png" />
+                                                </ImageView>
+                                                <ImageView fx:id="circuitWithin" fitWidth="558" fitHeight="310" layoutX="302.5" layoutY="187" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <Image url="@../img/datapath/circuit-within.png" />
+                                                </ImageView>
+                                                <!-- Componentes do Circuito -->
+                                                <ImageView fx:id="registersImg" fitWidth="439.37" fitHeight="281.81" layoutX="361.17" layoutY="195.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/registers.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="aluImg" fitWidth="439.37" fitHeight="281.81" layoutX="366.17" layoutY="189.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/alu.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="amuxImg" fitWidth="439.37" fitHeight="281.81" layoutX="363.17" layoutY="191.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/amux.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="aLatchImg" fitWidth="439.37" fitHeight="281.81" layoutX="360.17" layoutY="193.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/a-latch.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="bLatchImg" fitWidth="439.37" fitHeight="281.81" layoutX="360.17" layoutY="193.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/b-latch.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="aDecImg" fitWidth="439.37" fitHeight="281.81" layoutX="361.17" layoutY="195.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/a-decoder.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="bDecImg" fitWidth="439.37" fitHeight="281.81" layoutX="361.17" layoutY="195.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/b-decoder.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="cDecImg" fitWidth="439.37" fitHeight="281.81" layoutX="367.07" layoutY="188.5" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/c-decoder.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="clockImg" fitWidth="439.37" fitHeight="281.81" layoutX="360.17" layoutY="191.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/4-phase-clock.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="shifterImg" fitWidth="439.37" fitHeight="281.81" layoutX="364.17" layoutY="189.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/shifter.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="marImg" fitWidth="439.37" fitHeight="281.81" layoutX="362.17" layoutY="191.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/mar.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="mbrImg" fitWidth="439.37" fitHeight="281.81" layoutX="350.17" layoutY="192.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/mbr.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="mMuxImg" fitWidth="439.37" fitHeight="281.81" layoutX="360.17" layoutY="192.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/mmux.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="mpcImg" fitWidth="439.37" fitHeight="281.81" layoutX="360.17" layoutY="192.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/mpc.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="incImg" fitWidth="439.37" fitHeight="281.81" layoutX="360.17" layoutY="192.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/increment.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="controlImg" fitWidth="439.37" fitHeight="281.81" layoutX="361.17" layoutY="190.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/control-store.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="mirImg" fitWidth="439.37" fitHeight="281.81" layoutX="361.17" layoutY="191.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/mir.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="mSeqLogicImg" fitWidth="439.37" fitHeight="281.81" layoutX="362.17" layoutY="190.7" pickOnBounds="true" preserveRatio="true" visible="false">
+                                                   <image> 
+                                                      <Image url="@../img/datapath/micro-seq-logic.png"/>
+                                                   </image>
+                                                </ImageView>
+                                                <!-- Fim dos Componentes do Circuito -->
+                                                <ImageView fx:id="circuitTop" fitWidth="853" fitHeight="480" layoutX="270" layoutY="95" pickOnBounds="true" preserveRatio="true" visible="true">
+                                                   <Image url="@../img/datapath/circuit-top.png" />
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                       </ScrollPane>
+                                       <Label fx:id="instructionStatusLabel" StackPane.alignment="BOTTOM_CENTER" prefHeight="32.0" prefWidth="835.0" styleClass="status-bar" visible="false">
+                                          <padding>
+                                             <Insets left="5.0" />
+                                          </padding>
+                                          <StackPane.margin>
+                                                <Insets top="0" right="0" bottom="20" left="0"/>
+                                          </StackPane.margin>  
+                                       </Label>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+               </AnchorPane>
+            </content>
+          </Tab>
+          
+        </tabs>
+      </TabPane>
+      <VBox fx:id="consolebox" maxWidth="500" prefHeight="100" spacing="5.0" alignment="BOTTOM_RIGHT" StackPane.alignment="BOTTOM_RIGHT">
+         <HBox fx:id="FirstVBox" prefHeight="40" spacing="5.0" alignment="CENTER_LEFT">
+            <children>
+               <VBox minWidth="100" alignment="CENTER">
+                  <Label fx:id="consoleLabel" text="Console">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </VBox>
+               <Separator minWidth="15.0" opacity="0.0" orientation="VERTICAL" prefHeight="22.0" prefWidth="5.0" />
+               <Button fx:id="btnRun" maxHeight="32.0" maxWidth="32.0" mnemonicParsing="false" onAction="#runCodeAction" prefHeight="32.0" prefWidth="32.0" styleClass="buttons">
+                     <tooltip>
+                        <Tooltip fx:id="runCodeTooltip" showDelay="250ms" text="%runCode" />
+                     </tooltip></Button>
+               <Button fx:id="btnNextSubClock" disable="true" maxHeight="32.0" maxWidth="32.0" mnemonicParsing="false" onAction="#runSubClockCycleAction" prefHeight="32.0" prefWidth="32.0" styleClass="buttons">
+                     <tooltip>
+                        <Tooltip fx:id="nextSubClockTooltip" showDelay="250ms" text="%nextSubClk" />
+                     </tooltip></Button>
+               <Button fx:id="btnNextClock" disable="true" layoutX="208.0" layoutY="10.0" maxHeight="32.0" maxWidth="32.0" mnemonicParsing="false" onAction="#runClockCycleAction" prefHeight="32.0" prefWidth="32.0" styleClass="buttons">
+                     <tooltip>
+                        <Tooltip fx:id="nextClockTooltip" showDelay="250ms" text="%nextClk" />
+                     </tooltip></Button>
+                  <Button fx:id="btnEndProgram" disable="true" layoutX="280.0" layoutY="10.0" maxHeight="32.0" maxWidth="32.0" mnemonicParsing="false" onAction="#endProgramExecutionAction" prefHeight="32.0" prefWidth="32.0" styleClass="buttons">
+                     <tooltip>
+                        <Tooltip fx:id="endProgramTooltip" showDelay="250ms" text="%endProgram" />
+                     </tooltip>
+                  </Button>
+               <Separator minWidth="15.0" opacity="0.0" orientation="VERTICAL" prefHeight="22.0" prefWidth="5.0" />
+                  <Button fx:id="btnNewFile" alignment="CENTER" contentDisplay="CENTER" maxHeight="32.0" maxWidth="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#newFileAction" prefHeight="32.0" prefWidth="32.0" styleClass="buttons">
+                     <tooltip>
+                        <Tooltip fx:id="newFileTooltip" showDelay="250ms" text="%newFile" />
+                     </tooltip></Button>
+                  <Button fx:id="btnLoadFile" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="32.0" maxWidth="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#loadFileAction" prefHeight="32.0" prefWidth="32.0" styleClass="buttons">
+                        <tooltip>
+                           <Tooltip fx:id="loadFileTooltip" showDelay="250ms" text="%loadFile" />
+                        </tooltip></Button>
+                  <Button fx:id="btnSaveFile" alignment="CENTER" contentDisplay="CENTER" layoutX="46.0" layoutY="10.0" maxHeight="32.0" maxWidth="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#saveFileAction" prefHeight="32.0" prefWidth="32.0" styleClass="buttons">
+                        <tooltip>
+                        <Tooltip fx:id="saveFileTooltip" showDelay="250ms" text="%saveFile" />
+                     </tooltip>
+                  </Button>
+            </children>
+         </HBox>
+         <TextArea fx:id="console" editable="false" prefHeight="50.0" prefWidth="725.0" promptText="No instructions available." />
+         <padding>
+            <Insets bottom="30" left="0" right="25" top="0" />
+         </padding>
+      </VBox>
+      </StackPane>
+   </center>
+
+</BorderPane>

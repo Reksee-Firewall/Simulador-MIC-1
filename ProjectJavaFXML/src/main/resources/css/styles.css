@@ -1,0 +1,180 @@
+.root {
+    -fx-background-color: #0e0e0e;
+    -fx-control-inner-background: #292929;
+}
+
+.root * {
+    -fx-text-fill: #ffffff;
+}
+
+#scroll {
+    -fx-background-color: transparent; /* Removes the background color */
+    -fx-border-color: transparent; /* Removes the border color */
+    -fx-border-width: 0; /* Sets border width to zero */
+    -fx-focus-color: transparent; /* Removes the blue focus border */
+    -fx-faint-focus-color: transparent; /* Removes the faint focus color */	
+}
+
+#txt {
+    -fx-font-size: 16;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent; /* Define o fundo da área de visualização como transparente */
+}
+
+#FirstVBox .tool-bar * {
+    -fx-background-color: linear-gradient(#0e0e0e, #1b1b1b);
+    -fx-border-width: 0px; 
+}
+
+#FirstVBox .menu-bar * {
+    -fx-background-color: linear-gradient(#0e0e0e, #1b1b1b);
+}
+
+#tabPane .tab-header-background {
+    -fx-background-color: linear-gradient(#0e0e0e, #1b1b1b);
+}
+
+.tab {
+    -fx-background-color: #292929;
+}
+
+.button {
+    -fx-background-color: #292929;
+}
+
+.combo-box {
+    -fx-background-color: #292929;
+} 
+
+#radixChoiceMenu {
+    -fx-background-color: #292929;
+} 
+
+.table-view {
+    -fx-background-color: #292929;
+}
+
+.table-view  * {
+    -fx-background-color: #292929;
+}
+
+.table-view .scroll-bar * {
+    -fx-background-color: #292929;
+}
+
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #1b1b1b; /* Cor do polegar da barra de rolagem vertical */
+}
+
+.table-view .scroll-bar:horizontal .thumb {
+    -fx-background-color: #1b1b1b; /* Cor do polegar da barra de rolagem vertical */
+}
+
+.text-area * {
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #1b1b1b;
+    -fx-background-color: #292929;
+}
+
+#console {
+    -fx-prompt-text-fill: white; 
+}
+
+.text-area:focused {
+    -fx-border-color: #1b1b1b;
+}
+
+#btnRun {
+    -fx-background-image: url("../img/btnRun.png");
+}
+
+#btnNextSubClock {
+    -fx-background-image: url("../img/btnNextFaze.png");
+}
+
+#btnNextClock {
+    -fx-background-image: url("../img/btnNextClock.png");
+}
+
+#btnEndProgram {
+    -fx-background-image: url("../img/btnEnd.png");
+}
+
+#btnNewFile {
+    -fx-background-image: url("../img/btnNewFile.png");
+}
+
+#btnSaveFile {
+    -fx-background-image: url("../img/btnSave.png");
+}
+
+#btnLoadFile {
+    -fx-background-image: url("../img/btnOpenFile.png");
+}
+
+#btnSearchMemory {
+    -fx-background-image: url("../img/search.png");
+}
+
+#btnSelectRadix {
+    -fx-background-image: url("../img/search.png");
+}
+
+#bsLanBtn {
+    -fx-background-image: url("../img/bs.png");
+}
+
+#enLanBtn {
+    -fx-background-image: url("../img/en.png");
+}
+
+.buttons {
+    -fx-background-color: Transparent;
+    -fx-cursor: HAND;
+}
+
+.toolbar {
+    -fx-background-color: Transparent;
+    -fx-graphic-text-gap: 8;
+}
+
+#FirstVBox {
+    -fx-background-color: #1b1b1b;
+}
+
+#FirstVBox * {
+    -fx-background-color: Transparent;
+    -fx-background-insets: 0;
+}
+
+.transparent-label {
+    -fx-background-color: Transparent;
+}
+
+.center-align {
+    -fx-alignment: CENTER;
+}
+
+.default-border {
+    -fx-border-color: #1b1b1b;
+}
+
+.table-label {
+    -fx-background-color: linear-gradient(#1b1b1b, #1b1b1b);
+}
+
+.table-field {
+    -fx-border-color: #1b1b1b;
+    -fx-background-insets: 0;
+}
+
+.status-bar {
+    -fx-background-color: #292929;
+    -fx-border-color: #1b1b1b;
+}
+
+.hyperlink {
+    -fx-border-color: transparent;
+}

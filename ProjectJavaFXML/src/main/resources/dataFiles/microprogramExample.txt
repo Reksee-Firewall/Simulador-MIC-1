@@ -1,0 +1,23 @@
+
+; Verifica se C = A.
+; Se C = A, o programa acaba.
+; Caso contrário, incrementa B em C e repete num loop até C = A ser verdadeiro.
+
+; 2048 = A
+; 2049 = B
+; 2050 = C
+
+LOCO 30
+STOD 2048
+LOCO 10
+STOD 2049
+LOCO 10
+STOD 2050
+loop:
+  SUBD 2048
+  JZER FIM
+  LODD 2050
+  ADDD 2049
+  STOD 2050
+JUMP loop
+FIM:
